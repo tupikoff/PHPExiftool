@@ -51,7 +51,7 @@ class Exiftool implements LoggerAwareInterface
         $process = new Process($command);
         $process->setTimeout($timeout);
 
-        $this->logger->addInfo(sprintf('Exiftool executes command %s', $process->getCommandLine()));
+        $this->logger->info(sprintf('Exiftool executes command %s', $process->getCommandLine()));
 
         $process->run();
 
@@ -78,8 +78,8 @@ class Exiftool implements LoggerAwareInterface
             return $binary;
         }
 
-        $dev = __DIR__ . '/../../vendor/exiftool/exiftool/exiftool';
-        $packaged = __DIR__ . '/../../../../exiftool/exiftool/exiftool';
+        $dev = __DIR__ . '/../../vendor/phpexiftool/exiftool/exiftool';
+        $packaged = __DIR__ . '/../../../../phpexiftool/exiftool/exiftool';
 
         foreach (array($packaged, $dev) as $location) {
 
